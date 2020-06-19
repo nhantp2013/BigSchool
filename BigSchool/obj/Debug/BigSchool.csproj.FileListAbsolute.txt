@@ -101,7 +101,6 @@ E:\CNTTprovip\Web\BigSchool\BigSchool\bin\Microsoft.Owin.Security.Twitter.xml
 E:\CNTTprovip\Web\BigSchool\BigSchool\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\CNTTprovip\Web\BigSchool\BigSchool\bin\Microsoft.Owin.Security.OAuth.xml
 E:\CNTTprovip\Web\BigSchool\BigSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\CNTTprovip\Web\BigSchool\BigSchool\obj\Debug\BigSchool.csprojAssemblyReference.cache
 E:\CNTTprovip\Web\BigSchool\BigSchool\obj\Debug\BigSchool.csproj.CopyComplete
 E:\CNTTprovip\Web\BigSchool\BigSchool\obj\Debug\BigSchool.dll
 E:\CNTTprovip\Web\BigSchool\BigSchool\obj\Debug\BigSchool.pdb
@@ -109,3 +108,13 @@ E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.Migrations.InitialMode
 E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.csproj.GenerateResource.cache
 E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.Migrations.CreateTableCourse.resources
 E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.Migrations.PopulateCategoryTable.resources
+E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.Migrations.AddNameColumnToApplicationUser.resources
+E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.Migrations.AddAttendance.resources
+E:\CNTTprovip\Web\bigschool\BigSchool\bin\System.Net.Http.Formatting.dll
+E:\CNTTprovip\Web\bigschool\BigSchool\bin\System.Web.Http.dll
+E:\CNTTprovip\Web\bigschool\BigSchool\bin\System.Web.Http.WebHost.dll
+E:\CNTTprovip\Web\bigschool\BigSchool\bin\System.Net.Http.Formatting.xml
+E:\CNTTprovip\Web\bigschool\BigSchool\bin\System.Web.Http.xml
+E:\CNTTprovip\Web\bigschool\BigSchool\bin\System.Web.Http.WebHost.xml
+E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.Migrations.AddFollowingsTable.resources
+E:\CNTTprovip\Web\bigschool\BigSchool\obj\Debug\BigSchool.Migrations.AddAttendance1.resources
