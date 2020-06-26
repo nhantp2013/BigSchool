@@ -12,11 +12,9 @@ namespace BigSchool.Models
         [Key]
         [Column(Order = 1)]
         public string FollowerId { get; set; }
-
         [Key]
-        [Column(Order =2)]
+        [Column(Order = 2)]
         public string FolloweeId { get; set; }
-
         public ApplicationUser Follower { get; set; }
         public ApplicationUser Followee { get; set; }
     }

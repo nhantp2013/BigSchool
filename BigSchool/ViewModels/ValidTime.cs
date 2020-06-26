@@ -13,10 +13,10 @@ namespace BigSchool.ViewModels
         {
             DateTime dateTime;
             var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "H:mm",
+                "HH:mm",
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
-                out dateTime);
+            out dateTime);
             return isValid;
         }
     }

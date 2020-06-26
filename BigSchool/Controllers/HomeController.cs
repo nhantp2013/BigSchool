@@ -6,32 +6,81 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using BigSchool.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace BigSchool.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext _dbContext;
-
+        private readonly ApplicationDbContext _dbContext;
         public HomeController()
         {
             _dbContext = new ApplicationDbContext();
         }
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
-            var upcommingCourses = _dbContext.Courses
-                .Include(c => c.Lecturer)
-                .Include(c => c.Category)
-                .Where(c => c.DataTime > DateTime.Now);
-
-            var viewModel = new CoursesViewModel
+            var viewModel = new CourseViewModel();
+            if (searching == null)
             {
-                UpcommingCourses = upcommingCourses,
-                ShowAction = User.Identity.IsAuthenticated
-            };
+                var userId = User.Identity.GetUserId();
+                var listOfAttendedCourses = _dbContext.Attendance
+                    .Include(a => a.Course)
+                    .Include(a => a.Attendee)
+                    .Where(a => a.AttendeeId == userId).ToList();
 
-            return View(viewModel);
+                var upCommingCourses = _dbContext.Course
+                    .Include(c => c.Lecturer)
+                    .Include(c => c.Category)
+                    .Where(c => c.DateTime > DateTime.Now).ToList();
+
+                var followingLecturers = _dbContext.Following
+                    .Include(f => f.Followee)
+                    .Include(f => f.Follower)
+                    .Where(a => a.FollowerId == userId)
+                    .ToList();
+
+                viewModel = new CourseViewModel
+                {
+                    ListOfAttendedCourses = listOfAttendedCourses,
+                    ListOfFollowings = followingLecturers,
+                    UpCommingCourses = upCommingCourses,
+                    ShowAction = User.Identity.IsAuthenticated
+                };
+                return View(viewModel);
+            }
+            else
+            {
+                var userId = User.Identity.GetUserId();
+                var listOfAttendedCourses = _dbContext.Attendance
+                    .Include(a => a.Course)
+                    .Include(a => a.Attendee)
+                    .Where(a => a.AttendeeId == userId).ToList();
+
+                var upCommingCourses = _dbContext.Course
+                    .Include(c => c.Lecturer)
+                    .Include(c => c.Category)
+                    .Where(c => c.Lecturer.Name.Contains(searching) || c.Category.Name.Contains(searching)).ToList();
+
+                var followingLecturers = _dbContext.Following
+                    .Include(f => f.Followee)
+                    .Include(f => f.Follower)
+                    .Where(a => a.FollowerId == userId)
+                    .ToList();
+
+                viewModel = new CourseViewModel
+                {
+                    ListOfAttendedCourses = listOfAttendedCourses,
+                    ListOfFollowings = followingLecturers,
+                    UpCommingCourses = upCommingCourses,
+                    ShowAction = User.Identity.IsAuthenticated
+                };
+                return View(viewModel);
+            }
+
+
         }
+
+
 
         public ActionResult About()
         {
